@@ -6,7 +6,7 @@ toaddr = 'luunghianghia@gmail.com'
 msg = input('Enter Your Text Message: ')
 
 username = 'nghialv@thaison.vn'
-password = 'Ngh!@lv@20'
+password = 'xxxx'
 
 server = smtplib.SMTP('mail1.thaison.vn:587')
 #server.starttls()

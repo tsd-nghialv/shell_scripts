@@ -7,10 +7,12 @@
 ping -c4 210.245.51.189 > /dev/null 2>&1
 if [ "$?" != 0 ]; then
 # echo -e "Subject: Host Warning\nHost $output Down!" | sendmail nghialv@thaison.vn
-token="5542561908:AAGGlo2WYnvC_9ONjprPUponitwSEd1pvck"
+token="5520385337:AAGc0Xtsw1xYVYZ0rTzpyrDx-AeVXyf6rh4"
 chatid="-711836222"
 msg=$(echo "CRITICAL: WAN Down!")
 curl -X POST "https://api.telegram.org/bot$token/sendMessage" -d chat_id=$chatid -d text="$msg"
+#echo -e "PRVC Alert!: WAN --> DOWN"
+
 else
  exit 0;
 fi

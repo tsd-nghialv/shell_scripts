@@ -1,7 +1,6 @@
-
 import requests
 import os
-host = ['113.160.86.242', '']
+host = ['113.160.86.242', '117.4.245.172', '113.190.232.180']
 for hosts in host:
     cmd = os.system('ping -c4 ' + hosts)
     if cmd != 0:

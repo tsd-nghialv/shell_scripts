@@ -1,6 +1,6 @@
 import requests
 username = 'thaison'
-pasword = 'Zaq1Zxcv'
+pasword = 'xxxx'
 receiver = '0987492093'
 content = 'Test'
 target = '0987492093'

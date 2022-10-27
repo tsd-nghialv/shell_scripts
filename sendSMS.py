@@ -1,13 +1,13 @@
 import requests
 import sys
-username = 'thaison'
-pasword = 'xxxx'
-receiver = '0987492093'
-content = sys.argv[1]
-target = sys.argv[2]
-url = 'http://g3g4.vn:8008/smsws/services/SendMT?wsdl'
-headers = {'content-type': 'text/xml', 'parse_mode': 'Markdown'}
-body = '''<?xml version="1.0" encoding="UTF-8"?>
+try:
+    username = 'thaison'
+    pasword = 'xxxx'
+    receiver = '0987492093'
+    content = sys.argv[1]
+    target = sys.argv[2]
+    url = 'http://g3g4.vn:8008/smsws/services/SendMT?wsdl'
+    body = '''<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sms="http://sms.neo">
    <soapenv:Header/>
    <soapenv:Body>
@@ -29,5 +29,7 @@ body = '''<?xml version="1.0" encoding="UTF-8"?>
       </sms:sendSMS>
    </soapenv:Body>
 </soapenv:Envelope>'''.format(username, pasword, receiver, content, target)
-response = requests.post(url, data=body, headers=headers)
-print(response.text)
+    response = requests.post(url, data=body)
+    print(response.text)
+except IndexError:
+    print("Cần 2 tham số đầu vào: Nội dung thông điệp và SĐT người nhận")

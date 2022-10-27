@@ -1,18 +1,19 @@
 import requests
+import sys
 username = 'thaison'
 pasword = 'xxxx'
 receiver = '0987492093'
-content = 'Test'
-target = '0987492093'
+content = sys.argv[1]
+target = sys.argv[2]
 url = 'http://g3g4.vn:8008/smsws/services/SendMT?wsdl'
-headers = {'content-type': 'text/xml'}
+headers = {'content-type': 'text/xml', 'parse_mode': 'Markdown'}
 body = '''<?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sms="http://sms.neo">
    <soapenv:Header/>
    <soapenv:Body>
       <sms:sendSMS>
          <!--Optional:-->
-         <sms:username>{0}</sms:username> 
+         <sms:username>{0}</sms:username>
          <!--Optional:-->
          <sms:password>{1}</sms:password>
          <!--Optional:-->
